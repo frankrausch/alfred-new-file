@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.frankrausch.alfred-new-file</string>
+	<key>connections</key>
+	<dict>
+		<key>8983B798-BC0C-47D5-98A6-85F7002E689F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB2EFA49-C3D6-4A10-9A31-EFA5E9E5CE87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CB2EFA49-C3D6-4A10-9A31-EFA5E9E5CE87</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Frank Rausch</string>
+	<key>description</key>
+	<string>Create an empty file in Finder</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>new</string>
+				<key>subtext</key>
+				<string>Create a new text file in the current Finder window</string>
+				<key>text</key>
+				<string>New File</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8983B798-BC0C-47D5-98A6-85F7002E689F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+set title to "Untitled.txt"
+
+if q is not equal to "" then set title to q
+
+tell application "Finder" to make new file at (the target of the front window) as alias with properties {name: title}
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CB2EFA49-C3D6-4A10-9A31-EFA5E9E5CE87</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>8983B798-BC0C-47D5-98A6-85F7002E689F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>CB2EFA49-C3D6-4A10-9A31-EFA5E9E5CE87</key>
+		<dict>
+			<key>xpos</key>
+			<integer>430</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>frankrausch.com</string>
+</dict>
+</plist>
